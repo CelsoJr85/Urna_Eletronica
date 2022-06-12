@@ -58,19 +58,39 @@ def PresidenteVotos():
                     height=2,
                     anchor=CENTER)
 
+    label_6 = Label(menu_inicial,
+                    text="",
+                    font="Arial 20",
+                    fg="#0000ff",
+                    bd=1,
+                    relief=FLAT,
+                    padx=5,
+                    pady=5,
+                    anchor=CENTER)
+
     # grid Textos
     label_titulo.grid(row=0, column=1)
     label_1.grid(row=1, column=1)
     label_2.grid(row=1, column=3)
-    label_3.grid(row=3, column=1)
+    label_3.grid(row=4, column=1)
     label_4.grid(row=3, column=6)
     label_5.grid(row=4, column=6)
+    label_6.grid(row=3, column=1)
+
+    def botao_0():
+        label_6['text'] = "0"
+        resultado_p.append(label_6["text"])
 
     def botao_1():
+        label_6['text'] = "01"
+        resultado_p.append(label_6["text"])
         label_3['text'] = "Pernalonga"
         resultado_p.append(label_3["text"])
 
+
     def botao_2():
+        label_6['text'] = "02"
+        resultado_p.append(label_6["text"])
         label_3['text'] = "  Patolino   "
         resultado_p.append(label_3["text"])
 
@@ -134,7 +154,8 @@ def PresidenteVotos():
                     text=" 0 ",
                     width=5,
                     height=2,
-                    anchor=W)
+                    anchor=W,
+                    command=lambda: botao_0())
 
     cmd_11 = Button(menu_inicial,
                     text="LIMPA",
